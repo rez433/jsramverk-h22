@@ -1,20 +1,35 @@
+require('dotenv').config();
 const express = require('express');
-const dotenv = require('dotenv').config();
+const mongoose = require('mongoose');
 const cors = require('cors');
-const { errHandler } = require('./middleWare/errHandler')
-const cnctDB = require('./dbOps/db');
 const port = process.env.PORT || 1337;
+const docRoutes = require('./routes/route');
 
 
-cnctDB();
 
 const app = express();
 
-app.use(cors());
+// Middleware
 app.use(express.json());
+
+app.use(cors());
+
 app.use(express.urlencoded({ extended: false }));   
-app.use('/api/docs', require('./routes/routes.js'));
-app.use(errHandler);
+
+app.use((req, res, next) => {
+    console.log(req.path, req.method);
+    next();
+})
 
 
-app.listen(port, () => console.log(`server is running on port: ${port}`))
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`server is running on port: ${port}`)
+        })
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+
+app.use('/api/docs', docRoutes);
