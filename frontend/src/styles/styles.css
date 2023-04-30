@@ -1,0 +1,182 @@
+@import './menubar.css';
+@import './font.css';
+@import './editor.css';
+@import './signup.css';
+@import './tab.css';
+@import './signform.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	background: #d4cece;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin: 0;
+	color: white;
+
+}
+
+
+h1 {
+	font-weight: 100;
+	color: white;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+
+p {
+	color: #bf1650;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.docTitle,
+.docUpd8,
+.docUser {
+    width: calc(100% / 3)
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #e6e6e6;
+	margin-bottom: 60px;
+}
+
+.header ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header ul li {
+	margin-left: 20px;
+}
+
+.header ul li a {
+	display: flex;
+	align-items: center;
+}
+
+.header ul li a:hover {
+	color: #777;
+}
+
+.header ul li a svg {
+	margin-right: 5px;
+}
+
+.heading {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 50px;
+	padding: 0 20px;
+}
+
+.heading p {
+	color: #828282;
+}
+
+.form,
+.content {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-group textarea,
+.form-group select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	font-family: inherit;
+}
+
+.form-group label {
+	text-align: left;
+	display: block;
+	margin: 0 0 5px 3px;
+}
+
+
+
+
+.docsList {
+	display: column;
+	flex-direction: row;
+	justify-content: flex-start;
+
+}
+
+a:hover {
+	cursor: default;
+}
+
+.docInfo {
+	font-size: large;
+	font-weight: 600;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.docTbl {
+	font-size: larger;
+}
+
+.docInfo:first-child {
+	margin-bottom: 1rem;
+	border-bottom: 1px solid gray;
+}
+
+.docInfo:nth-child(2) {
+	color: green;
+	padding-bottom: 1rem;
+	font-size: larger;
+
+}
+
+.docTitle,
+.docUpd8,
+.docUser {
+	width: calc(100% / 3)
+}
+
+
+
+@media (max-width: 600px) {
+	.form {
+		width: 90%;
+	}
+
+	.heading h1 {
+		font-size: 2rem;
+	}
+
+	.heading p {
+		font-size: 1.5rem;
+	}
+}
